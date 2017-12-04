@@ -1,5 +1,6 @@
 import React, { Component } from "react";
-import Main from "./common/main";
+import { Switch, Route, withRouter } from 'react-router-dom';
+import Home from "./components/home/components/homeView";
 import Header from "./common/header";
 import Footer from "./common/footer";
 
@@ -7,11 +8,16 @@ import "./App.css";
 
 class App extends Component {
   render() {
+    // console.log(this.props)
     return (
       <div className="App">
-        <Header />
+        <Header {...this.props} />
         <div className="main">
-          <Main />
+          <main>
+            <Switch {...this.props}>
+              <Route exact path="/" component={Home} />
+            </Switch>
+          </main>
         </div>
         <div className="footer">
           <Footer />
@@ -21,4 +27,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default withRouter(App);

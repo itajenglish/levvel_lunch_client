@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Menu } from "semantic-ui-react";
+// import { browserHistory } from 'react-router';
 
 class Header extends Component {
   render() {
