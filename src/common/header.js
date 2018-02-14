@@ -7,7 +7,7 @@ class Header extends Component {
       console.log(this.props)
     return (
       <Menu stackable>
-        <Menu.Item>
+        <Menu.Item onClick={() => this.props.history.push('/')}>
           <img
             src={require("../images/levvel-logo-light.svg")}
             alt="Levvel_Logo"
@@ -17,11 +17,11 @@ class Header extends Component {
 
         <Menu.Menu position='right'>
 
-            <Menu.Item name="signup">
+            <Menu.Item onClick={() => this.props.history.push('/signup')} name="signup">
             Sign up
             </Menu.Item>
 
-            <Menu.Item name="login">
+            <Menu.Item onClick={() => this.props.history.push('/login')} name="login">
             login
             </Menu.Item>
         </Menu.Menu>
